@@ -50,7 +50,7 @@ export class WeatherService {
       city: data.name,
       country: data.sys.country,
       date: data.dt * 1000,
-      image: 'http://openweathermap.org/img/w/${data.weather[0].icon}.png',
+      image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
       temperature: data.main.temp,
       description: data.weather[0].description
     }
