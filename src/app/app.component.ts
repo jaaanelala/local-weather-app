@@ -7,13 +7,16 @@ import {WeatherService} from './weather/weather.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'local-weather-app';
+
   currentWeather: ICurrentWeather
 
-  constructor (private weatherService: WeatherService){
+  constructor(private weatherService: WeatherService) {
 
   }
+
   doSearch (searchValue){
     if (searchValue) {
       const userInput = searchValue.split (',').map (s=> s.trim());
