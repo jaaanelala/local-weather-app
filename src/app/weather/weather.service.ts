@@ -6,8 +6,7 @@ import {map} from 'rxjs/operators';
 import { Observable} from 'rxjs';
 
 export interface IWeatherService{
-  getCurrentWeather(search: string | number, country?: string)
-: Observable<ICurrentWeather>}
+  getCurrentWeather(search: string | number, country?: string): Observable<ICurrentWeather>}
 
 interface ICurrentWeatherData {
   weather: [{
@@ -50,8 +49,7 @@ export class WeatherService implements IWeatherService {
     )
   } 
 
-  private transformToICurrentWeather(data: ICurrentWeatherData) : ICurrentWeather{
-    return {
+  private transformToICurrentWeather(data: ICurrentWeatherData) : ICurrentWeather{ return {
       city: data.name,
       country: data.sys.country,
       date: data.dt * 1000,
